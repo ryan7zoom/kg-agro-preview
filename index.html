@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>KG Dairy &amp; Agro</title>
+<meta name="description" content="KG Dairy &amp; Agro imports farm goods from abroad, sources across Bangladesh and exports the surplus.">
+<link rel="icon" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAFCF8}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #72BF44;outline-offset:3px}
+.rise{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+@keyframes rise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+.spin-a{animation:spin 60s linear infinite;transform-origin:50% 50%}
+.spin-b{animation:spin 90s linear infinite reverse;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bob{animation:bob 7s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.leaf{position:absolute;animation:drift linear infinite;opacity:0}
+@keyframes drift{0%{opacity:0;transform:translate(0,60px) rotate(0deg)}15%{opacity:.55}85%{opacity:.4}100%{opacity:0;transform:translate(60px,-520px) rotate(160deg)}}
+.track{display:flex;width:max-content;animation:run 40s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes run{to{transform:translateX(-50%)}}
+.btn{transition:transform .2s ease,background-color .2s ease,color .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 3s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.4);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+.flow{stroke-dasharray:3 9;animation:flow 2.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-48}}
+.shine{background-size:200% 200%;animation:shine 12s ease-in-out infinite}
+@keyframes shine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.stripes{animation:stripes 1.1s linear infinite}
+@keyframes stripes{to{background-position:56px 0}}
+.card .ico{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ico{transform:scale(1.1) rotate(-6deg)}
+.progress{position:fixed;top:0;left:0;right:0;height:5px;background:#72BF44;transform-origin:0 50%;transform:scaleX(0);z-index:50}
+@media (min-width: 900px){.stack{position:sticky;top:var(--t)}}
+@supports (animation-timeline: view()){
+.scrollin{animation:scrollin linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+@keyframes scrollin{from{opacity:.1;transform:translateY(40px) scale(.98)}to{opacity:1;transform:none}}
+.ph{animation:ph linear both;animation-timeline:view();animation-range:entry 35% cover 30%}
+@keyframes ph{from{opacity:.13}to{opacity:1}}
+.progress{animation:grow linear both;animation-timeline:scroll(root)}
+@keyframes grow{to{transform:scaleX(1)}}
+}
+@media (prefers-reduced-motion: reduce){
+.rise,.spin-a,.spin-b,.bob,.leaf,.track,.scrollin,.pulse,.flow,.shine,.stripes,.ph,.progress{animation:none!important}
+.leaf{opacity:.3}
+.mover{display:none}
+.progress{display:none}
+.card .ico,.btn{transition:none}
+}
+</style>
+
+</head>
+<body>
+
+
+<!-- Layout concept: bold, colourful agro-import homepage. Deep-forest hero with the logo badge and drifting leaves, leaf-green ticker, scroll-lit statement with flow lanes, stacked product cards, an inbound trade map, split inquiry panel. Palette lifted from the logo. -->
+<div style="width: 100%; box-sizing: border-box; background: #FAFCF8; color: #1D3A2C; font-family: 'DM Sans', system-ui, sans-serif; font-size: 18px; line-height: 1.55; overflow-x: clip">
+
+
+
+<!-- HERO -->
+<section id="top" style="position: relative; overflow: clip; background: radial-gradient(900px 640px at 82% 28%, #1E7A4C 0%, rgba(30,122,76,0) 62%), radial-gradient(760px 560px at 6% 96%, #0F6D96 0%, rgba(15,109,150,0) 60%), #0B2E1F; color: #F2FAF4">
+
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<svg class="leaf" style="left: 6%; bottom: 0; width: 46px; animation-duration: 15s; animation-delay: 0s" viewBox="0 0 40 40"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#72BF44"/></svg>
+<svg class="leaf" style="left: 18%; bottom: 0; width: 28px; animation-duration: 19s; animation-delay: 3s" viewBox="0 0 40 40"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#8FD65F"/></svg>
+<svg class="leaf" style="left: 34%; bottom: 0; width: 60px; animation-duration: 22s; animation-delay: 6s" viewBox="0 0 40 40"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#2E99D6"/></svg>
+<svg class="leaf" style="left: 52%; bottom: 0; width: 34px; animation-duration: 17s; animation-delay: 1.5s" viewBox="0 0 40 40"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#72BF44"/></svg>
+<svg class="leaf" style="left: 66%; bottom: 0; width: 52px; animation-duration: 21s; animation-delay: 8s" viewBox="0 0 40 40"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#8FD65F"/></svg>
+<svg class="leaf" style="left: 80%; bottom: 0; width: 30px; animation-duration: 16s; animation-delay: 4s" viewBox="0 0 40 40"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#5CC0F2"/></svg>
+<svg class="leaf" style="left: 92%; bottom: 0; width: 44px; animation-duration: 20s; animation-delay: 10s" viewBox="0 0 40 40"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#72BF44"/></svg>
+</div>
+
+<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 0 max(16px, 4vw); box-sizing: border-box">
+
+<header style="padding: 26px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
+<span style="display: inline-flex; width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; align-items: center; justify-content: center"><img src="logo.png" alt="" style="width: 40px; height: 40px; object-fit: contain"></span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 48; letter-spacing: -0.01em"><span style="color: #5CC0F2">KG</span> <span style="color: #8FD65F">Dairy &amp; Agro</span></span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; font-weight: 500; font-size: 16px">
+<a href="#products" style="color: #E6F2EA; text-decoration: none">Products</a>
+<a href="#trade" style="color: #E6F2EA; text-decoration: none">Imports and exports</a>
+<a href="#about" style="color: #E6F2EA; text-decoration: none">About</a>
+<a class="btn" href="#inquiry" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border-radius: 999px; background: #72BF44; color: #0B2E1F; font-weight: 700; text-decoration: none; box-sizing: border-box">Send an inquiry</a>
+</nav>
+</header>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px 48px; padding: 32px 0 96px">
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 30px">
+<h1 class="rise d1" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(60px, 9.2vw, 132px); line-height: 0.92; letter-spacing: -0.015em; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #FFFFFF; text-wrap: balance; overflow-wrap: break-word">Everything <span style="color: #8FD65F">agro</span>, brought home.</h1>
+<p class="rise d2" style="margin: 0; max-width: 36ch; font-size: 24px; line-height: 1.3; color: #D5E8DB">KG Dairy &amp; Agro imports farm goods from abroad, sources across Bangladesh and exports the surplus.</p>
+<div class="rise d3" style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 17px; font-weight: 700">
+<a class="btn" href="#inquiry" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; border-radius: 999px; background: #72BF44; color: #0B2E1F; text-decoration: none; box-sizing: border-box">Send an inquiry</a>
+<a class="btn" href="#products" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; border-radius: 999px; border: 2px solid #5CC0F2; color: #FFFFFF; text-decoration: none; box-sizing: border-box">See what we bring in</a>
+</div>
+</div>
+<div class="rise d2" style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+<div style="position: relative; width: min(100%, 500px); aspect-ratio: 1 / 1">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<g class="spin-a"><circle cx="200" cy="200" r="196" fill="none" stroke="#72BF44" stroke-width="2" stroke-dasharray="3 10"/><circle cx="200" cy="4" r="9" fill="#8FD65F"/></g>
+<g class="spin-b"><circle cx="200" cy="200" r="170" fill="none" stroke="#5CC0F2" stroke-width="2" stroke-dasharray="46 14 8 14"/><circle cx="200" cy="30" r="7" fill="#5CC0F2"/></g>
+</svg>
+<div class="bob" style="position: absolute; inset: 15%; border-radius: 50%; background: #FFFFFF; box-shadow: 0 30px 60px -20px rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center">
+<img src="logo.png" alt="KG Dairy and Agro logo: the letters KG inside a green leaf ring" style="width: 86%; height: 86%; object-fit: contain">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- RUNNING BAND -->
+<div class="marquee" aria-label="Product categories" style="background: #72BF44; overflow: hidden">
+<div class="track" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #0B2E1F">
+<div style="display: flex; align-items: center; gap: 32px; padding: 22px 16px 22px 0; white-space: nowrap">
+<span>Dairy</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Cattle and goats</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Poultry</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Fish and shrimp</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Seeds</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Feed</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Rice and grains</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Fruit and vegetables</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Processed food</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Farm machinery</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg>
+</div>
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 32px; padding: 22px 16px 22px 0; white-space: nowrap">
+<span>Dairy</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Cattle and goats</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Poultry</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Fish and shrimp</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Seeds</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Feed</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Rice and grains</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Fruit and vegetables</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Processed food</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg><span>Farm machinery</span><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><path d="M0 40C0 15 15 0 40 0 40 25 25 40 0 40z" fill="#0B2E1F"/></svg>
+</div>
+</div>
+</div>
+
+<!-- STATEMENT: words light up on scroll, then three flow lanes -->
+<section id="about" style="background: #FAFCF8">
+<div style="max-width: 1280px; margin: 0 auto; padding: 120px max(16px, 4vw) 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+<p style="margin: 0; max-width: 20em; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(36px, 5.4vw, 80px); line-height: 1.04; letter-spacing: -0.015em; color: #0B2E1F; font-variation-settings: 'wdth' 80, 'opsz' 96">
+<span class="ph">From a calf in the field to a container at the port, </span><span class="ph" style="color: #17709F">KG Dairy &amp; Agro farms, processes and trades. </span><span class="ph">We bring in what Bangladesh needs, </span><span class="ph" style="color: #2F8F4E">source the best of what it grows, </span><span class="ph">and send the surplus out.</span>
+</p>
+
+<div style="display: flex; flex-direction: column; gap: 28px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 40px">
+<div style="flex: 1 1 300px; min-width: 0">
+<h3 style="margin: 0 0 4px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 34px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #17709F">Brought in from abroad</h3>
+<p style="margin: 0; color: #3C5A49">Most of our work. Goods from other countries, into Bangladesh.</p>
+</div>
+<div style="flex: 2 1 420px; min-width: 0; height: 22px; border-radius: 999px; background: #D6ECF8; overflow: clip"><div class="stripes" style="width: 100%; height: 100%; background: repeating-linear-gradient(115deg, #17709F 0 14px, #2E99D6 14px 28px); background-size: 56px 100%"></div></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 40px">
+<div style="flex: 1 1 300px; min-width: 0">
+<h3 style="margin: 0 0 4px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 34px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #2F8F4E">Sourced across Bangladesh</h3>
+<p style="margin: 0; color: #3C5A49">From farms and producers here, to our plants and customers.</p>
+</div>
+<div style="flex: 2 1 420px; min-width: 0; height: 22px; border-radius: 999px; background: #DCEFC9; overflow: clip"><div class="stripes" style="width: 68%; height: 100%; border-radius: 999px; background: repeating-linear-gradient(115deg, #2F8F4E 0 14px, #72BF44 14px 28px); background-size: 56px 100%"></div></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 40px">
+<div style="flex: 1 1 300px; min-width: 0">
+<h3 style="margin: 0 0 4px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 34px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #9A6B00">Sent out to other markets</h3>
+<p style="margin: 0; color: #3C5A49">The part we export: surplus and specialities that travel well.</p>
+</div>
+<div style="flex: 2 1 420px; min-width: 0; height: 22px; border-radius: 999px; background: #FBEBB4; overflow: clip"><div class="stripes" style="width: 34%; height: 100%; border-radius: 999px; background: repeating-linear-gradient(115deg, #D79A00 0 14px, #F3C94B 14px 28px); background-size: 56px 100%"></div></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PRODUCT CARDS: stack on scroll -->
+<section id="products" style="max-width: 1280px; margin: 0 auto; padding: 72px max(16px, 4vw) 120px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 16px 48px; align-items: flex-end; justify-content: space-between; margin-bottom: 48px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(52px, 7vw, 100px); line-height: 0.92; font-variation-settings: 'wdth' 75, 'opsz' 96; letter-spacing: -0.015em; color: #0B2E1F">What we bring in</h2>
+<p style="margin: 0; max-width: 38ch; color: #3C5A49">Seven families of agro goods. If it grows, is raised or is made from it, ask us.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 24px">
+
+<div class="stack card" style="--t: 90px; display: flex; flex-wrap: wrap; border-radius: 32px; overflow: clip; background: #0B2E1F; color: #F2FAF4; box-shadow: 0 -20px 40px -24px rgba(11,46,31,.5)">
+<div style="flex: 1 1 380px; min-width: 0; box-sizing: border-box; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #FFFFFF">Dairy and livestock</h3>
+<p style="margin: 0; max-width: 42ch; font-size: 20px; color: #CFE3D6">Milk, butter, cheese, ghee and milk powder, plus cattle, goats, sheep and buffalo, reared, fattened and traded.</p>
+<a class="btn" href="#inquiry" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #72BF44; color: #0B2E1F; font-weight: 700; text-decoration: none; box-sizing: border-box">Ask about this</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; min-height: 340px; position: relative; background: #12432C; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; width: 90%; max-width: 380px; aspect-ratio: 1 / 1"><g class="spin-a"><circle cx="200" cy="200" r="190" fill="none" stroke="#72BF44" stroke-width="2" stroke-dasharray="3 10"/></g></svg>
+<svg class="ico" width="200" height="200" viewBox="0 0 64 64" fill="none" stroke="#8FD65F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 8h16v8l6 10v30a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4V26l6-10z"/><path d="M18 36h28"/></svg>
+</div>
+</div>
+
+<div class="stack card" style="--t: 112px; display: flex; flex-wrap: wrap; border-radius: 32px; overflow: clip; background: #72BF44; color: #0B2E1F; box-shadow: 0 -20px 40px -24px rgba(11,46,31,.5)">
+<div style="flex: 1 1 380px; min-width: 0; box-sizing: border-box; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; font-variation-settings: 'wdth' 75, 'opsz' 96">Poultry and eggs</h3>
+<p style="margin: 0; max-width: 42ch; font-size: 20px">Breeding stock, chicks, eggs and ducks, with the feed, vaccines and veterinary supplies that keep a flock healthy.</p>
+<a class="btn" href="#inquiry" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #0B2E1F; color: #F2FAF4; font-weight: 700; text-decoration: none; box-sizing: border-box">Ask about this</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; min-height: 340px; position: relative; background: #8FD65F; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; width: 90%; max-width: 380px; aspect-ratio: 1 / 1"><g class="spin-b"><circle cx="200" cy="200" r="190" fill="none" stroke="#0B2E1F" stroke-width="2" stroke-dasharray="3 10"/></g></svg>
+<svg class="ico" width="200" height="200" viewBox="0 0 64 64" fill="none" stroke="#0B2E1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 8c10 0 18 16 18 28a18 18 0 0 1-36 0C14 24 22 8 32 8z"/><path d="M24 40c1 5 4 8 8 8"/></svg>
+</div>
+</div>
+
+<div class="stack card" style="--t: 134px; display: flex; flex-wrap: wrap; border-radius: 32px; overflow: clip; background: #17709F; color: #FFFFFF; box-shadow: 0 -20px 40px -24px rgba(11,46,31,.5)">
+<div style="flex: 1 1 380px; min-width: 0; box-sizing: border-box; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; font-variation-settings: 'wdth' 75, 'opsz' 96">Fish and seafood</h3>
+<p style="margin: 0; max-width: 42ch; font-size: 20px">Fish, shrimp, prawn, lobster and crab, from hatchery and farm to processing, cold storage and trade.</p>
+<a class="btn" href="#inquiry" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #0B2E3F; font-weight: 700; text-decoration: none; box-sizing: border-box">Ask about this</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; min-height: 340px; position: relative; background: #1F86BD; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; width: 90%; max-width: 380px; aspect-ratio: 1 / 1"><g class="spin-a"><circle cx="200" cy="200" r="190" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 10"/></g></svg>
+<svg class="ico" width="200" height="200" viewBox="0 0 64 64" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 32c10-14 26-14 36 0-10 14-26 14-36 0z"/><path d="M42 32l16-12v24z"/><circle cx="17" cy="30" r="2"/></svg>
+</div>
+</div>
+
+<div class="stack card" style="--t: 156px; display: flex; flex-wrap: wrap; border-radius: 32px; overflow: clip; background: #DCEFC9; color: #0B2E1F; box-shadow: 0 -20px 40px -24px rgba(11,46,31,.5)">
+<div style="flex: 1 1 380px; min-width: 0; box-sizing: border-box; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; font-variation-settings: 'wdth' 75, 'opsz' 96">Seeds and nurseries</h3>
+<p style="margin: 0; max-width: 42ch; font-size: 20px">Rice, corn, potato, vegetable and watermelon seed, hybrid seed production and nursery stock.</p>
+<a class="btn" href="#inquiry" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #0B2E1F; color: #F2FAF4; font-weight: 700; text-decoration: none; box-sizing: border-box">Ask about this</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; min-height: 340px; position: relative; background: #C6E4A8; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; width: 90%; max-width: 380px; aspect-ratio: 1 / 1"><g class="spin-b"><circle cx="200" cy="200" r="190" fill="none" stroke="#1E7A4C" stroke-width="2" stroke-dasharray="3 10"/></g></svg>
+<svg class="ico" width="200" height="200" viewBox="0 0 64 64" fill="none" stroke="#1E7A4C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 58V30"/><path d="M32 36C32 24 22 18 10 18c0 12 8 20 22 18z"/><path d="M32 28c0-10 8-16 22-16 0 12-8 18-22 16z"/></svg>
+</div>
+</div>
+
+<div class="stack card" style="--t: 178px; display: flex; flex-wrap: wrap; border-radius: 32px; overflow: clip; background: #D6ECF8; color: #0B2E3F; box-shadow: 0 -20px 40px -24px rgba(11,46,31,.5)">
+<div style="flex: 1 1 380px; min-width: 0; box-sizing: border-box; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; font-variation-settings: 'wdth' 75, 'opsz' 96">Feed and feed mills</h3>
+<p style="margin: 0; max-width: 42ch; font-size: 20px">Feed for poultry, dairy cattle, fish and shrimp, and the machinery to mill it.</p>
+<a class="btn" href="#inquiry" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #0B2E3F; color: #F2FAF4; font-weight: 700; text-decoration: none; box-sizing: border-box">Ask about this</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; min-height: 340px; position: relative; background: #BFE0F3; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; width: 90%; max-width: 380px; aspect-ratio: 1 / 1"><g class="spin-a"><circle cx="200" cy="200" r="190" fill="none" stroke="#17709F" stroke-width="2" stroke-dasharray="3 10"/></g></svg>
+<svg class="ico" width="200" height="200" viewBox="0 0 64 64" fill="none" stroke="#17709F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 22h32l4 34H12z"/><path d="M22 22c0-8 4-12 10-12s10 4 10 12"/><path d="M24 38h16"/></svg>
+</div>
+</div>
+
+<div class="stack card" style="--t: 200px; display: flex; flex-wrap: wrap; border-radius: 32px; overflow: clip; background: #F3C94B; color: #3A2C05; box-shadow: 0 -20px 40px -24px rgba(11,46,31,.5)">
+<div style="flex: 1 1 380px; min-width: 0; box-sizing: border-box; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; font-variation-settings: 'wdth' 75, 'opsz' 96">Food and beverage</h3>
+<p style="margin: 0; max-width: 42ch; font-size: 20px">Juices, jams, pickles, sauces, canned and dried foods, and packaged milk products.</p>
+<a class="btn" href="#inquiry" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #3A2C05; color: #FFF4CC; font-weight: 700; text-decoration: none; box-sizing: border-box">Ask about this</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; min-height: 340px; position: relative; background: #F7D87A; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; width: 90%; max-width: 380px; aspect-ratio: 1 / 1"><g class="spin-b"><circle cx="200" cy="200" r="190" fill="none" stroke="#3A2C05" stroke-width="2" stroke-dasharray="3 10"/></g></svg>
+<svg class="ico" width="200" height="200" viewBox="0 0 64 64" fill="none" stroke="#3A2C05" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12h24v6H20z"/><path d="M18 18h28v38a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4z"/><path d="M24 30h16v14H24z"/></svg>
+</div>
+</div>
+
+<div class="stack card" style="--t: 222px; display: flex; flex-wrap: wrap; border-radius: 32px; overflow: clip; background: #1E7A4C; color: #FFFFFF; box-shadow: 0 -20px 40px -24px rgba(11,46,31,.5)">
+<div style="flex: 1 1 380px; min-width: 0; box-sizing: border-box; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; font-variation-settings: 'wdth' 75, 'opsz' 96">Grains and milling</h3>
+<p style="margin: 0; max-width: 42ch; font-size: 20px">Paddy, rice, wheat and flour, with milling, husking and edible oil refining.</p>
+<a class="btn" href="#inquiry" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #0B2E1F; font-weight: 700; text-decoration: none; box-sizing: border-box">Ask about this</a>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; min-height: 340px; position: relative; background: #2A8F5C; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" viewBox="0 0 400 400" style="position: absolute; width: 90%; max-width: 380px; aspect-ratio: 1 / 1"><g class="spin-a"><circle cx="200" cy="200" r="190" fill="none" stroke="#DCEFC9" stroke-width="2" stroke-dasharray="3 10"/></g></svg>
+<svg class="ico" width="200" height="200" viewBox="0 0 64 64" fill="none" stroke="#DCEFC9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 60V14"/><path d="M32 26c-8-1-11-7-11-13 8 0 11 6 11 13z"/><path d="M32 26c8-1 11-7 11-13-8 0-11 6-11 13z"/><path d="M32 40c-8-1-11-7-11-13 8 0 11 6 11 13z"/><path d="M32 40c8-1 11-7 11-13-8 0-11 6-11 13z"/><path d="M32 54c-8-1-11-7-11-13 8 0 11 6 11 13z"/><path d="M32 54c8-1 11-7 11-13-8 0-11 6-11 13z"/></svg>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- TRADE MAP: routes flow INTO Bangladesh -->
+<section id="trade" style="position: relative; overflow: clip; background: linear-gradient(135deg, #0B2E3F 0%, #0B2E1F 100%); color: #E6F2EA">
+<div style="max-width: 1280px; margin: 0 auto; padding: 112px max(16px, 4vw); box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
+<h2 style="margin: 0; flex: 1 1 420px; min-width: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(52px, 7vw, 104px); line-height: 0.92; font-variation-settings: 'wdth' 75, 'opsz' 96; letter-spacing: -0.015em; color: #FFFFFF; overflow-wrap: break-word">The world, <span style="color: #8FD65F">delivered to Bangladesh.</span></h2>
+<p style="margin: 0; flex: 1 1 320px; min-width: 0; max-width: 42ch; font-size: 22px; line-height: 1.35; color: #C3DACB">Most of what we trade comes in. We import from abroad, source from farms across Bangladesh, and export what we can spare.</p>
+</div>
+
+<div style="width: 100%; border-radius: 28px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); overflow: clip">
+<svg role="img" aria-label="Trade routes from many countries flowing into Bangladesh, with local sourcing and a smaller route out" viewBox="0 0 1200 460" style="display: block; width: 100%; height: auto">
+<defs>
+<pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#2C5A47"/></pattern>
+</defs>
+<rect width="1200" height="460" fill="url(#dots)"/>
+
+<g fill="none" stroke="#5CC0F2" stroke-width="2.6" stroke-linecap="round">
+<path class="flow" d="M700 130 Q480 60 330 270"/>
+<path class="flow" d="M960 210 Q640 120 330 270"/>
+<path class="flow" d="M880 350 Q700 400 330 270"/>
+<path class="flow" d="M120 120 Q200 120 330 270"/>
+<path class="flow" d="M560 380 Q460 420 330 270"/>
+<path class="flow" d="M1080 100 Q800 20 330 270"/>
+</g>
+<g fill="none" stroke="#A5E37A" stroke-width="2" stroke-linecap="round">
+<path class="flow" d="M240 170 L330 270"/>
+<path class="flow" d="M190 260 L330 270"/>
+<path class="flow" d="M250 350 L330 270"/>
+<path class="flow" d="M430 190 L330 270"/>
+<path class="flow" d="M450 350 L330 270"/>
+</g>
+<path class="flow" d="M330 270 Q760 470 1120 390" fill="none" stroke="#F3C94B" stroke-width="2" stroke-linecap="round" style="animation-duration: 3.6s"/>
+
+<g fill="#FFFFFF">
+<circle class="mover" r="6"><animateMotion dur="5s" repeatCount="indefinite" path="M700 130 Q480 60 330 270"/></circle>
+<circle class="mover" r="6"><animateMotion dur="6.5s" begin="1s" repeatCount="indefinite" path="M960 210 Q640 120 330 270"/></circle>
+<circle class="mover" r="6"><animateMotion dur="5.5s" begin="2s" repeatCount="indefinite" path="M880 350 Q700 400 330 270"/></circle>
+<circle class="mover" r="6"><animateMotion dur="4s" begin="0.5s" repeatCount="indefinite" path="M120 120 Q200 120 330 270"/></circle>
+<circle class="mover" r="6"><animateMotion dur="4.5s" begin="1.5s" repeatCount="indefinite" path="M560 380 Q460 420 330 270"/></circle>
+<circle class="mover" r="6"><animateMotion dur="7s" begin="2.5s" repeatCount="indefinite" path="M1080 100 Q800 20 330 270"/></circle>
+<circle class="mover" r="6"><animateMotion dur="5s" begin="3s" repeatCount="indefinite" path="M700 130 Q480 60 330 270"/></circle>
+<circle class="mover" r="6"><animateMotion dur="6.5s" begin="4.5s" repeatCount="indefinite" path="M960 210 Q640 120 330 270"/></circle>
+<circle class="mover" r="6"><animateMotion dur="5.5s" begin="0s" repeatCount="indefinite" path="M880 350 Q700 400 330 270"/></circle>
+</g>
+<g fill="#C9F5A8">
+<circle class="mover" r="4"><animateMotion dur="2.2s" repeatCount="indefinite" path="M240 170 L330 270"/></circle>
+<circle class="mover" r="4"><animateMotion dur="2.6s" begin="0.4s" repeatCount="indefinite" path="M190 260 L330 270"/></circle>
+<circle class="mover" r="4"><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite" path="M250 350 L330 270"/></circle>
+<circle class="mover" r="4"><animateMotion dur="2s" begin="1.1s" repeatCount="indefinite" path="M430 190 L330 270"/></circle>
+<circle class="mover" r="4"><animateMotion dur="2.3s" begin="0.2s" repeatCount="indefinite" path="M450 350 L330 270"/></circle>
+</g>
+<circle class="mover" r="5" fill="#F3C94B"><animateMotion dur="6s" begin="1s" repeatCount="indefinite" path="M330 270 Q760 470 1120 390"/></circle>
+
+<g fill="#5CC0F2">
+<circle cx="700" cy="130" r="10"/><circle cx="960" cy="210" r="10"/><circle cx="880" cy="350" r="10"/><circle cx="120" cy="120" r="10"/><circle cx="560" cy="380" r="10"/><circle cx="1080" cy="100" r="10"/>
+</g>
+<g fill="#A5E37A">
+<circle cx="240" cy="170" r="6"/><circle cx="190" cy="260" r="6"/><circle cx="250" cy="350" r="6"/><circle cx="430" cy="190" r="6"/><circle cx="450" cy="350" r="6"/>
+</g>
+<circle cx="1120" cy="390" r="8" fill="#F3C94B"/>
+
+<circle class="pulse" cx="330" cy="270" r="22" fill="none" stroke="#8FD65F" stroke-width="3"/>
+<circle class="pulse" cx="330" cy="270" r="22" fill="none" stroke="#8FD65F" stroke-width="3" style="animation-delay: 1.5s"/>
+<circle cx="330" cy="270" r="16" fill="#8FD65F"/>
+<circle cx="330" cy="270" r="6" fill="#0B2E1F"/>
+<text x="352" y="312" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="30" fill="#FFFFFF" stroke="#0B2E3F" stroke-width="7" paint-order="stroke" stroke-linejoin="round">Bangladesh</text>
+</svg>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 12px 32px; font-weight: 500; font-size: 16px; color: #E6F2EA">
+<span style="display: inline-flex; align-items: center; gap: 10px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #5CC0F2"></span>Brought in from abroad</span>
+<span style="display: inline-flex; align-items: center; gap: 10px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #A5E37A"></span>Sourced across Bangladesh</span>
+<span style="display: inline-flex; align-items: center; gap: 10px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #F3C94B"></span>Sent out to other markets</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
+<div class="scrollin" style="padding: 28px; border-radius: 22px; background: rgba(114,191,68,.16); min-width: 0">
+<h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 36px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #8FD65F">You ask</h3>
+<p style="margin: 0; color: #D5E8DB">Product, quantity, origin and timing, in a short inquiry.</p>
+</div>
+<div class="scrollin" style="padding: 28px; border-radius: 22px; background: rgba(92,192,242,.16); min-width: 0">
+<h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 36px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #5CC0F2">We source</h3>
+<p style="margin: 0; color: #D5E8DB">From producers abroad, or from farms and plants across Bangladesh.</p>
+</div>
+<div class="scrollin" style="padding: 28px; border-radius: 22px; background: rgba(114,191,68,.16); min-width: 0">
+<h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 36px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #8FD65F">We bring it in</h3>
+<p style="margin: 0; color: #D5E8DB">Shipping, customs and cold storage, handled start to finish.</p>
+</div>
+<div class="scrollin" style="padding: 28px; border-radius: 22px; background: rgba(92,192,242,.16); min-width: 0">
+<h3 style="margin: 0 0 10px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 36px; line-height: 1; font-variation-settings: 'wdth' 75, 'opsz' 96; color: #5CC0F2">We deliver</h3>
+<p style="margin: 0; color: #D5E8DB">To your door or your warehouse, anywhere in Bangladesh.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- INQUIRY -->
+<section id="inquiry" style="max-width: 1280px; margin: 0 auto; padding: 112px max(16px, 4vw); box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; border-radius: 32px; overflow: clip; box-shadow: 0 40px 80px -40px rgba(11,46,31,.45)">
+<div class="shine" style="flex: 1 1 360px; min-width: 0; box-sizing: border-box; padding: 48px; background: linear-gradient(120deg, #0B2E1F, #1E7A4C, #17709F, #0B2E1F); color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(48px, 5.6vw, 80px); line-height: 0.94; font-variation-settings: 'wdth' 75, 'opsz' 96; letter-spacing: -0.015em">Tell us what you need.</h2>
+<p style="margin: 0; max-width: 34ch; color: #E1F0E6">A few lines are enough. A person at KG Dairy &amp; Agro reads every inquiry.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 17px; color: #FFFFFF">
+<span>Phone and WhatsApp: [YOUR NUMBER]</span>
+<span>Email: [YOUR EMAIL]</span>
+<span>Office: [YOUR ADDRESS], Bangladesh</span>
+</div>
+</div>
+<form id="inquiry-form" style="flex: 2 1 480px; min-width: 0; box-sizing: border-box; background: #FFFFFF; padding: 44px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+<label for="f-name" style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 15px; color: #0B2E1F">Your name
+<input id="f-name" type="text" autocomplete="name" style="height: 54px; box-sizing: border-box; border: 2px solid #C9DBCF; border-radius: 14px; background: #F4F9F1; padding: 0 16px; font: 400 18px 'DM Sans', sans-serif; color: #0B2E1F"></label>
+<label for="f-company" style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 15px; color: #0B2E1F">Company
+<input id="f-company" type="text" autocomplete="organization" style="height: 54px; box-sizing: border-box; border: 2px solid #C9DBCF; border-radius: 14px; background: #F4F9F1; padding: 0 16px; font: 400 18px 'DM Sans', sans-serif; color: #0B2E1F"></label>
+<label for="f-country" style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 15px; color: #0B2E1F">Country
+<input id="f-country" type="text" autocomplete="country-name" style="height: 54px; box-sizing: border-box; border: 2px solid #C9DBCF; border-radius: 14px; background: #F4F9F1; padding: 0 16px; font: 400 18px 'DM Sans', sans-serif; color: #0B2E1F"></label>
+<label for="f-dir" style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 15px; color: #0B2E1F">You want to
+<select id="f-dir" style="height: 54px; box-sizing: border-box; border: 2px solid #C9DBCF; border-radius: 14px; background: #F4F9F1; padding: 0 16px; font: 400 18px 'DM Sans', sans-serif; color: #0B2E1F">
+<option>Import into Bangladesh</option><option>Source within Bangladesh</option><option>Export from Bangladesh</option><option>Supply to KG</option>
+</select></label>
+<label for="f-product" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 15px; color: #0B2E1F">Product and quantity
+<input id="f-product" type="text" style="height: 54px; box-sizing: border-box; border: 2px solid #C9DBCF; border-radius: 14px; background: #F4F9F1; padding: 0 16px; font: 400 18px 'DM Sans', sans-serif; color: #0B2E1F"></label>
+<label for="f-msg" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 15px; color: #0B2E1F">Anything else we should know
+<textarea id="f-msg" rows="4" style="box-sizing: border-box; border: 2px solid #C9DBCF; border-radius: 14px; background: #F4F9F1; padding: 14px 16px; font: 400 18px/1.45 'DM Sans', sans-serif; color: #0B2E1F; resize: vertical"></textarea></label>
+<div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
+<button class="btn" type="button" style="min-height: 56px; padding: 0 36px; border-radius: 999px; background: #1E7A4C; color: #FFFFFF; border: 0; cursor: pointer; font: 700 17px 'DM Sans', sans-serif">Send inquiry</button>
+<span style="font-size: 14px; color: #55705F">Form not connected yet. Point it at your email before launch.</span>
+</div>
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #0B2E1F; color: #C3DACB">
+<div style="max-width: 1280px; margin: 0 auto; padding: 64px max(16px, 4vw) 28px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 32px 64px; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; align-items: center; gap: 18px">
+<span style="display: inline-flex; width: 84px; height: 84px; border-radius: 50%; background: #FFFFFF; align-items: center; justify-content: center"><img src="logo.png" alt="" style="width: 66px; height: 66px; object-fit: contain"></span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(44px, 6vw, 84px); line-height: 0.92; font-variation-settings: 'wdth' 75, 'opsz' 96; letter-spacing: -0.015em"><span style="color: #5CC0F2">KG</span> <span style="color: #8FD65F">Dairy &amp; Agro</span></span>
+</div>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 12px 28px; font-weight: 500; font-size: 16px">
+<a href="#products" style="color: #E6F2EA">Products</a><a href="#trade" style="color: #E6F2EA">Imports and exports</a><a href="#about" style="color: #E6F2EA">About</a><a href="#inquiry" style="color: #E6F2EA">Contact</a>
+</nav>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 max(16px, 4vw) 40px; box-sizing: border-box; font-size: 14px; color: #8FAA99">KG Dairy &amp; Agro Limited. Registered in Bangladesh.</div>
+</footer>
+
+</div>
+
+</body>
+</html>
