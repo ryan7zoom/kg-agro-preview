@@ -286,7 +286,29 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
   .cat-in .link-arrow{opacity:1;transform:none}
 }
 @media (max-width:640px){
-  .cat{flex-basis:78vw}
+  /* two-column grid replaces the swipe rail on phones */
+  .rail{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;
+    overflow:visible;scroll-snap-type:none;padding:0;
+  }
+  .cat{flex:none;aspect-ratio:3/4;border-radius:20px}
+  .cat:nth-child(7){grid-column:1/-1;aspect-ratio:16/9}
+  .cat-in{inset:auto 14px 14px}
+  .cat-in h3{font-size:17px;line-height:1.1;margin-bottom:0}
+  .cat-in p,.cat-in .link-arrow{display:none}
+  .cat .idx{top:12px;left:14px;font-size:10.5px}
+  .cat .count{top:10px;right:10px;padding:5px 8px;font-size:10px}
+  .rail-shell::before,.rail-shell::after,.rail-btn{display:none}
+  .map-names{
+    display:flex;flex-wrap:wrap;gap:6px;padding:14px 16px 16px;border-top:1px solid var(--line);
+  }
+  .map-names li{
+    display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink-dim);
+    border:1px solid var(--line);border-radius:999px;padding:5px 9px;
+  }
+  .map-names li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue);flex:none}
+  .map-names li.dest{background:var(--green);border-color:var(--green);color:#08251A;font-weight:700}
+  .map-names li.dest::before{background:#08251A}
 }
 
 /* soft edges on the scroller, desktop-free */
@@ -378,8 +400,21 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
 }
 .pcard-media .ring-svg{position:absolute;inset:8%;width:84%;height:84%;opacity:.55}
 @media (max-width:900px){
-  .pcard{position:static;grid-template-columns:1fr}
-  .pcard-media{order:-1;min-height:230px;border-left:0;border-bottom:1px solid var(--line)}
+  /* keep the stack on phones: each card pins, the next slides over it.
+     card height is held under a typical viewport so nothing hides under the next one. */
+  .pcard{position:sticky;top:calc(64px + (var(--t,0px) * .35));grid-template-columns:1fr}
+  .pcard-body{padding:18px 20px 20px;gap:14px}
+  .pcard-media{order:-1;min-height:170px;border-left:0;border-bottom:1px solid var(--line)}
+  .pcard h3{font-size:clamp(24px,6.4vw,30px)}
+  .pcard p{font-size:14.5px;line-height:1.5}
+  .specs{gap:10px 16px;padding-top:14px}
+  .specs dt{font-size:9.5px;margin-bottom:5px}
+  .specs dd{font-size:13.5px;line-height:1.35}
+  .pcard-cta{padding-top:14px}
+}
+/* short screens: pinning would cut cards off, so let them scroll normally */
+@media (max-width:900px) and (max-height:700px){
+  .pcard{position:static}
 }
 
 /* ---------------------------------------------------------------- map */
@@ -397,6 +432,8 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
 .origin text{font:600 13px/1 var(--font-body);fill:rgba(233,241,246,.78);letter-spacing:.02em;stroke:#061B27;stroke-width:4;paint-order:stroke;stroke-linejoin:round}
 .map-legend{display:flex;flex-wrap:wrap;gap:10px 24px;padding:16px 20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-dim);background:rgba(6,27,39,.5)}
 .map-legend span{display:inline-flex;align-items:center;gap:9px}
+/* country names, only where the map labels would be illegible */
+@media (min-width:641px){.map-names{display:none}}
 .sw{width:11px;height:11px;border-radius:50%;flex:none}
 
 .corridor-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-bottom:18px}
@@ -597,7 +634,7 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
 
   <div class="wrap hero-in">
     <div>
-      <h1 class="display">Everything<br><em>agro</em>,<br><span class="nw">brought home.</span></h1>      <p class="hero-sub">We import farm goods from abroad, source across Bangladesh, and export the surplus, with shipping, customs and cold storage handled in-house.</p>
+      <h1 class="display">Everything<br><em>agro</em>,<br><span class="nw">brought home.</span></h1>      <p class="hero-sub">We import farm goods, source across Bangladesh, and export the surplus. Shipping, customs and cold storage are handled in-house.</p>
       <div class="hero-cta">
         <a class="btn btn-green" href="#inquiry">Send an inquiry <span class="arw" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="#products">See what we bring in</a>
@@ -642,10 +679,10 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
   <div class="wrap">
     <div class="sec-head split rail-head">
       <div>
-        <p class="eyebrow" style="margin-bottom:16px">What we work with</p>
-        <h2 class="display sec-title">Seven families of agro goods, one trade desk.</h2>
+        <p class="eyebrow" style="margin-bottom:16px">Our range</p>
+        <h2 class="display sec-title">Dairy, poultry, seafood, seed, feed, food and grain.</h2>
       </div>
-      <p class="sec-lede">If it grows, is raised, or is made from it, it moves through us. Open a family to see formats, origins and lead times.</p>
+      <p class="sec-lede">That is the whole list. Each card carries the origins, packing and lead times we quote most often. If your product is not here, ask anyway.</p>
     </div>
 
     <div class="rail-shell">
@@ -739,10 +776,10 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
   <div class="wrap">
     <div class="trade-cols reveal">
       <div>
-        <p class="eyebrow" style="margin-bottom:18px">How we trade</p>
-        <p class="statement">Most of what we move comes <em>into</em> Bangladesh. We buy where the goods are best, bring them through Chattogram, and put them in front of buyers who need them on a schedule.</p>
-        <p class="trade-body">Dairy and feed ingredients arrive from Europe and India. Seafood, seed and grain move within the region. What Bangladesh grows well, and grows more of than it can eat, we clean, grade, pack and send back out.</p>
-        <p class="trade-body">One desk owns the shipment from purchase order to delivery: letters of credit, pre-shipment inspection, phytosanitary and halal certification, customs at Chattogram, and cold storage in Dhaka.</p>
+        <p class="eyebrow" style="margin-bottom:18px">Trade</p>
+        <p class="statement">Most of our volume comes <em>into</em> Bangladesh. We buy from producers in Europe, India and Australia, land it at Chattogram, and sell to processors and feed mills around Dhaka. Exports are smaller: shrimp, dried fish, processed food.</p>
+        <p class="trade-body">Dairy and feed come from Europe and India. Seafood arrives from Myanmar and Thailand. Rice and wheat come in by the vessel load. The things Bangladesh grows more of than it can eat, we grade, pack and ship out.</p>
+        <p class="trade-body">One desk owns the shipment from purchase order to delivery: letters of credit, pre-shipment inspection, phytosanitary and halal papers, customs at Chattogram, cold storage in Dhaka.</p>
       </div>
 
       <div class="mix">
@@ -770,10 +807,10 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
   <div class="wrap">
     <div class="sec-head split">
       <div>
-        <p class="eyebrow" style="margin-bottom:16px">What we bring in</p>
-        <h2 class="display sec-title">Seven ranges. Real specs, not brochures.</h2>
+        <p class="eyebrow" style="margin-bottom:16px">Product detail</p>
+        <h2 class="display sec-title">Weights, packing and lead times.</h2>
       </div>
-      <p class="sec-lede">Formats, minimums and lead times below are what we quote most often. Anything else, ask; the trade desk answers within one business day.</p>
+      <p class="sec-lede">The figures below are what we quote most often. If your number is not here, ask; the desk answers within one business day.</p>
     </div>
 
     <div class="stack">
@@ -954,9 +991,9 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
     <div class="sec-head split">
       <div>
         <p class="eyebrow" style="margin-bottom:16px">Imports &amp; exports</p>
-        <h2 class="display sec-title">The world, delivered to Chattogram.</h2>
+        <h2 class="display sec-title">Where our goods come from.</h2>
       </div>
-      <p class="sec-lede">Six corridors carry most of our volume. Everything lands at Chattogram, clears customs, and moves to our cold stores in Dhaka and Chattogram within 48 hours.</p>
+      <p class="sec-lede">Six corridors carry most of our volume. Everything lands at Chattogram, clears customs, and is in our cold stores within 48 hours.</p>
     </div>
 
     <div class="trade-map reveal">
@@ -1042,6 +1079,12 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
           <span><i class="sw" style="background:#72BF44"></i> Sourced across Bangladesh</span>
           <span><i class="sw" style="background:#E9F1F6"></i> Sent out to other markets</span>
         </div>
+        <ul class="map-names" aria-label="Countries shown on the map">
+          <li>Netherlands</li><li>Germany</li><li>India</li><li>China</li>
+          <li>Thailand</li><li>Vietnam</li><li>Myanmar</li><li>UAE</li>
+          <li>Australia</li><li>New Zealand</li><li>Brazil</li>
+          <li class="dest">Chattogram, Bangladesh</li>
+        </ul>
       </div>
 
     <div class="corridor-row reveal">
@@ -1109,9 +1152,9 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
     <div class="company-grid reveal">
       <div class="company-copy">
         <p class="eyebrow" style="margin-bottom:16px">The company</p>
-        <h2 class="display sec-title" style="margin-bottom:20px">Registered in Dhaka. Trading across four continents.</h2>
-        <p>KG Dairy &amp; Agro Limited is a private company limited by shares, registered in Bangladesh under the Companies Act, 1994. We started in 2019 importing dairy ingredients for processors, and grew into a full trade desk: import, local sourcing, processing and export.</p>
-        <p>Our offices are in Banani, Dhaka, with a trade and logistics base at Chattogram. We hold both Import Registration and Export Registration certificates, and work with freight forwarders and inspection agencies on a standing basis.</p>
+        <h2 class="display sec-title" style="margin-bottom:20px">Registered in Dhaka, working out of Banani.</h2>
+        <p>KG Dairy &amp; Agro Limited is a private company limited by shares, registered in Bangladesh under the Companies Act, 1994. We began in 2019 importing dairy ingredients for processors. Local sourcing, processing and export came later.</p>
+        <p>Our offices are in Banani, Dhaka, with a trade and logistics base at Chattogram. We hold both IRC and ERC certificates, and use the same forwarders and inspection agencies we have worked with for years.</p>
         <dl class="company-facts">
           <div><dt>Registered</dt><dd>Bangladesh · Companies Act 1994</dd></div>
           <div><dt>Head office</dt><dd>Banani, Dhaka 1213</dd></div>
@@ -1267,7 +1310,7 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
           <span><span class="k">KG</span> <span class="a">Dairy &amp; Agro</span></span>
         </div>
         <p class="foot-about">Import, local sourcing and export of dairy, poultry, seafood, seed, feed, food and grain, with shipping, customs and cold storage handled in-house.</p>
-        <a class="link-arrow" href="#inquiry">Start a conversation →</a>
+        <a class="link-arrow" href="#inquiry">Talk to the trade desk →</a>
       </div>
       <div class="foot-col">
         <h4>Products</h4>
