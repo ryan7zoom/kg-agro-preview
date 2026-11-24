@@ -299,16 +299,6 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
   .cat .idx{top:12px;left:14px;font-size:10.5px}
   .cat .count{top:10px;right:10px;padding:5px 8px;font-size:10px}
   .rail-shell::before,.rail-shell::after,.rail-btn{display:none}
-  .map-names{
-    display:flex;flex-wrap:wrap;gap:6px;padding:14px 16px 16px;border-top:1px solid var(--line);
-  }
-  .map-names li{
-    display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink-dim);
-    border:1px solid var(--line);border-radius:999px;padding:5px 9px;
-  }
-  .map-names li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue);flex:none}
-  .map-names li.dest{background:var(--green);border-color:var(--green);color:#08251A;font-weight:700}
-  .map-names li.dest::before{background:#08251A}
 }
 
 /* soft edges on the scroller, desktop-free */
@@ -432,8 +422,14 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
 .origin text{font:600 13px/1 var(--font-body);fill:rgba(233,241,246,.78);letter-spacing:.02em;stroke:#061B27;stroke-width:4;paint-order:stroke;stroke-linejoin:round}
 .map-legend{display:flex;flex-wrap:wrap;gap:10px 24px;padding:16px 20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-dim);background:rgba(6,27,39,.5)}
 .map-legend span{display:inline-flex;align-items:center;gap:9px}
-/* country names, only where the map labels would be illegible */
-@media (min-width:641px){.map-names{display:none}}
+/* two drawings: wide on desktop, portrait on phones where the desktop labels
+   would shrink to about 4px */
+.trade-map .map-m{display:none}
+@media (max-width:620px){
+  .trade-map .map-d{display:none}
+  .trade-map .map-m{display:block}
+  .map-m .origin text{font-size:14px;stroke-width:5}
+}
 .sw{width:11px;height:11px;border-radius:50%;flex:none}
 
 .corridor-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-bottom:18px}
@@ -455,10 +451,8 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
 .step p{font-size:14px;line-height:1.5;color:var(--muted)}
 @media (max-width:1024px){.corridor-row{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(2,1fr);row-gap:30px}}
 @media (max-width:620px){
-  .origin text{display:none}
   .corridor-row{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr}
-  .map-legend{font-size:12px}
 }
 
 /* ---------------------------------------------------------------- company */
@@ -997,7 +991,7 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
     </div>
 
     <div class="trade-map reveal">
-        <svg viewBox="0 0 1200 520" role="img" aria-label="Map of trade corridors: goods from the Netherlands, Germany, India, China, Thailand, Vietnam, Myanmar, Australia and Brazil flow into Bangladesh, with a smaller export route out to the Gulf and South-East Asia.">
+        <svg class="map-d" viewBox="0 0 1200 520" role="img" aria-label="Map of trade corridors: goods from the Netherlands, Germany, India, China, Thailand, Vietnam, Myanmar, Australia and Brazil flow into Bangladesh, with a smaller export route out to the Gulf and South-East Asia.">
           <defs>
             <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
               <circle cx="2" cy="2" r="1.3" fill="rgba(233,241,246,.16)"/>
@@ -1074,17 +1068,87 @@ section{padding-block:clamp(64px,8vw,120px);position:relative}
             <text x="1030" y="360">Gulf &amp; SE Asia</text>
           </g>
         </svg>
+
+        <!-- portrait version of the same drawing, for phones: same corridors,
+             labels sized to the canvas instead of the desktop artwork -->
+        <svg class="map-m" viewBox="0 0 400 620" role="img" aria-label="Trade corridors into Chattogram: Netherlands, Germany, Brazil, UAE, Australia, New Zealand, India, China, Thailand, Vietnam and Myanmar all flow into Bangladesh, with a small route out to the Gulf and South-East Asia.">
+          <defs>
+            <pattern id="dotsM" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.2" fill="rgba(233,241,246,.16)"/>
+            </pattern>
+          </defs>
+          <rect width="400" height="620" fill="url(#dotsM)"/>
+
+          <g class="routes">
+            <path d="M150 64 Q150 360 196 456"/>
+            <path d="M150 112 Q152 360 198 457"/>
+            <path d="M150 160 Q154 360 196 458"/>
+            <path d="M150 208 Q156 360 200 458"/>
+            <path d="M150 256 Q158 360 202 457"/>
+            <path d="M150 304 Q160 360 204 456"/>
+            <path d="M250 88 Q250 360 204 456"/>
+            <path d="M250 136 Q248 360 202 457"/>
+            <path d="M250 184 Q246 360 200 458"/>
+            <path d="M250 232 Q244 360 198 457"/>
+            <path d="M250 280 Q242 360 196 456"/>
+            <path class="export" d="M200 466 Q300 512 366 548"/>
+          </g>
+          <g class="routes domestic">
+            <path d="M152 420 Q180 440 200 462"/>
+            <path d="M248 420 Q220 440 200 462"/>
+            <path d="M118 466 Q160 466 200 462"/>
+          </g>
+
+          <g class="mover">
+            <circle r="4.5"><animateMotion dur="5.5s" repeatCount="indefinite" path="M150 64 Q150 360 196 456"/></circle>
+            <circle r="4.5"><animateMotion dur="5.1s" begin="1.4s" repeatCount="indefinite" path="M150 160 Q154 360 196 458"/></circle>
+            <circle r="4.5"><animateMotion dur="5.8s" begin="2.2s" repeatCount="indefinite" path="M150 304 Q160 360 204 456"/></circle>
+            <circle r="4.5"><animateMotion dur="4.4s" begin=".5s" repeatCount="indefinite" path="M250 88 Q250 360 204 456"/></circle>
+            <circle r="4.5"><animateMotion dur="4.8s" begin="1.8s" repeatCount="indefinite" path="M250 184 Q246 360 200 458"/></circle>
+            <circle r="4.5"><animateMotion dur="3.8s" begin=".9s" repeatCount="indefinite" path="M250 280 Q242 360 196 456"/></circle>
+            <circle r="3.5"><animateMotion dur="6s" begin="1s" repeatCount="indefinite" path="M200 466 Q300 512 366 548"/></circle>
+          </g>
+
+          <g class="origin">
+            <circle cx="150" cy="64" r="6" fill="#2E99D6"/><text x="136" y="69" text-anchor="end">Netherlands</text>
+            <circle cx="150" cy="112" r="5.5" fill="#2E99D6"/><text x="136" y="117" text-anchor="end">Germany</text>
+            <circle cx="150" cy="160" r="5.5" fill="#2E99D6"/><text x="136" y="165" text-anchor="end">Brazil</text>
+            <circle cx="150" cy="208" r="5.5" fill="#2E99D6"/><text x="136" y="213" text-anchor="end">UAE</text>
+            <circle cx="150" cy="256" r="5.5" fill="#2E99D6"/><text x="136" y="261" text-anchor="end">Australia</text>
+            <circle cx="150" cy="304" r="5.5" fill="#2E99D6"/><text x="136" y="309" text-anchor="end">New Zealand</text>
+
+            <circle cx="250" cy="88" r="5.5" fill="#2E99D6"/><text x="264" y="93">India</text>
+            <circle cx="250" cy="136" r="5.5" fill="#2E99D6"/><text x="264" y="141">China</text>
+            <circle cx="250" cy="184" r="5.5" fill="#2E99D6"/><text x="264" y="189">Thailand</text>
+            <circle cx="250" cy="232" r="5.5" fill="#2E99D6"/><text x="264" y="237">Vietnam</text>
+            <circle cx="250" cy="280" r="5.5" fill="#2E99D6"/><text x="264" y="285">Myanmar</text>
+          </g>
+
+          <g fill="#72BF44">
+            <circle cx="152" cy="420" r="4"/>
+            <circle cx="248" cy="420" r="4"/>
+            <circle cx="118" cy="466" r="4"/>
+          </g>
+
+          <g>
+            <circle cx="200" cy="462" r="24" fill="none" stroke="#72BF44" stroke-width="2.2" class="bd-pulse"/>
+            <circle cx="200" cy="462" r="24" fill="none" stroke="#72BF44" stroke-width="2.2" class="bd-pulse two"/>
+            <circle cx="200" cy="462" r="13" fill="#72BF44"/>
+            <circle cx="200" cy="462" r="4.5" fill="#061B27"/>
+            <text x="200" y="504" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="17" fill="#E9F1F6" stroke="#061B27" stroke-width="6" paint-order="stroke">Chattogram</text>
+            <text x="200" y="523" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.5" letter-spacing="1.6" fill="#8FA9B9">BANGLADESH</text>
+          </g>
+
+          <g class="origin">
+            <circle cx="366" cy="548" r="5.5" fill="#E9F1F6"/>
+            <text x="366" y="574" text-anchor="end">Gulf &amp; SE Asia</text>
+          </g>
+        </svg>
         <div class="map-legend">
           <span><i class="sw" style="background:#2E99D6"></i> Brought in from abroad</span>
           <span><i class="sw" style="background:#72BF44"></i> Sourced across Bangladesh</span>
           <span><i class="sw" style="background:#E9F1F6"></i> Sent out to other markets</span>
         </div>
-        <ul class="map-names" aria-label="Countries shown on the map">
-          <li>Netherlands</li><li>Germany</li><li>India</li><li>China</li>
-          <li>Thailand</li><li>Vietnam</li><li>Myanmar</li><li>UAE</li>
-          <li>Australia</li><li>New Zealand</li><li>Brazil</li>
-          <li class="dest">Chattogram, Bangladesh</li>
-        </ul>
       </div>
 
     <div class="corridor-row reveal">
